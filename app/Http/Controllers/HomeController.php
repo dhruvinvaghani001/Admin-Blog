@@ -13,7 +13,7 @@ class HomeController extends Controller
         $posts = Post::paginate(4);
         $cat = Category::all();
         $setting = Setting::first();
-        
+
         return view('frontend.home',compact(['posts','cat','setting']));
     }
     public function postdetail(Request $request , $id){
@@ -21,5 +21,11 @@ class HomeController extends Controller
         $cat = Category::all();
 
         return view('frontend.blog-detail-page.blog-details',compact(['post','cat']));
+    }
+    public function showblogdetail(Request $request){
+        $posts = Post::paginate(2);
+        $cat = Category::all();
+        $setting = Setting::first();
+        return view('frontend.blog-detail-page.blog-list',compact(['posts','cat','setting']));
     }
 }

@@ -1,14 +1,15 @@
-<!-- Begin page -->
-        @extends('frontend.common.layout')
-        @section('content')
-        <div>
-         <div id="layout-wrapper">
+@extends('frontend.common.layout')
+@section('content')
+<div>
+        <div id="layout-wrapper">
 
-
+            {{-- ===========================  Header  ================================== --}}
             <header id="page-topbar">
                 <div class="navbar-header">
                     <div class="d-flex">
-
+                        <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                           </button>
 
                         <!-- App Search-->
                         <form class="app-search d-none d-lg-block">
@@ -262,15 +263,9 @@
                 </div>
             </header>
 
-            <!-- ========== Left Sidebar Start ========== -->
-
-            <!-- Left Sidebar End -->
 
 
-
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
+            <!-- ================================  Main content  ============================== -->
             <div class="main-content">
 
                 <div class="page-content">
@@ -299,8 +294,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end page title -->
 
+                        {{-- ===========================  Post show  ================================ --}}
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
@@ -356,17 +351,6 @@
 
 
 
-                                                                {{-- <blockquote class="p-4 border-light border rounded mb-4">
-                                                                    <div class="d-flex">
-                                                                        <div class="me-3">
-                                                                            <i class="bx bxs-quote-alt-left text-dark font-size-24"></i>
-                                                                        </div>
-                                                                         <div>
-                                                                            <p class="mb-0">{{ substr($post->detail,500,700) }}</p>
-                                                                        </div>
-                                                                    </div>
-
-                                                                </blockquote> --}}
 
 
 
@@ -538,9 +522,9 @@
 
                     </div> <!-- container-fluid -->
                 </div>
-                <!-- End Page-content -->
 
 
+                {{-- ================================   footer  ============================ --}}
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
@@ -558,33 +542,26 @@
             </div>
             <!-- end main content-->
 
-            </div>
-            <!-- END layout-wrapper -->
+        </div>
+        <!-- END layout-wrapper -->
 
-            <!-- Right Sidebar -->
-            <div class="right-bar">
+        <!-- Right Sidebar -->
+        <div class="right-bar">
             <div data-simplebar class="h-100">
                 <div class="rightbar-title d-flex align-items-center px-3 py-4">
-
                     <h5 class="m-0 me-2">Settings</h5>
-
                     <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
                         <i class="mdi mdi-close noti-icon"></i>
                     </a>
                 </div>
-
                 <!-- Settings -->
                 <hr class="mt-0" />
-
-
             </div> <!-- end slimscroll-menu-->
-            </div>
-            <!-- /Right-bar -->
-
-            <!-- Right bar overlay-->
+        </div> <!-- /Right-bar -->
+        <!-- Right bar overlay-->
             <div class="rightbar-overlay"></div>
-        </div>
-        @endsection
+</div>
+@endsection
 
 
 

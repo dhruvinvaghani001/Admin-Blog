@@ -14,23 +14,21 @@
         <link rel="shortcut icon" href="{{ asset('frontend') }}/assets/images/favicon.ico">
 
         <!-- Bootstrap Css -->
-        <link href="{{ asset('frontend') }}/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('frontend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="{{ asset('frontend') }}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{asset('frontend') }}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="{{ asset('frontend') }}/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{asset('frontend')}}/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     </head>
 
 
 
 
-
-
-
+    <body data-sidebar="dark">
         @yield('content')
 
-
+            <!-- JAVASCRIPT -->
             <script src="{{ asset('frontend') }}/assets/libs/jquery/jquery.min.js"></script>
             <script src="{{ asset('frontend') }}/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
             <script src="{{ asset('frontend') }}/assets/libs/metismenu/metisMenu.min.js"></script>
@@ -38,20 +36,8 @@
             <script src="{{ asset('frontend') }}/assets/libs/node-waves/waves.min.js"></script>
             <script src="{{ asset('frontend') }}/assets/js/app.js"></script>
 
-        
 
 
-
-
-
-
-
-
-
-
-
-        <!-- JAVASCRIPT -->
-
-
+        {{-- </body> --}}
 <!-- Mirrored from themesbrand.com/skote/layouts/blog-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Apr 2022 06:07:06 GMT -->
 </html>

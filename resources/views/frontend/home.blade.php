@@ -1,7 +1,7 @@
 <!-- Begin page -->
 @extends('frontend.common.layout')
 @section('content')
-<body data-sidebar="dark">
+
 <div>
         <div id="layout-wrapper">
 
@@ -335,7 +335,7 @@
                                                                                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">View :</a>
                                                                             </li>
                                                                             <li class="nav-item">
-                                                                                <a class="nav-link" href="blog-list.html">
+                                                                                <a class="nav-link" href="{{ route('blogdetail') }}">
                                                                                     <i class="mdi mdi-format-list-bulleted"></i>
                                                                                 </a>
                                                                             </li>
@@ -358,7 +358,7 @@
                                                                 <div class="col-sm-6">
                                                                     <div class="card p-1 border shadow-none">
                                                                         <div class="p-3">
-                                                                            <h5><a href="blog-details.html" class="text-dark">{{ $post->title }}</a></h5>
+                                                                            <h5><a href="index/post/{{ $post->id }}" class="text-dark">{{ $post->title }}</a></h5>
                                                                             <p class="text-muted mb-0">{{ date('d F Y',strtotime($post->created_at)) }}</p>
                                                                         </div>
 
@@ -379,7 +379,7 @@
                                                                                     </a>
                                                                                 </li>
                                                                             </ul>
-                                                                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
+                                                                            <p>{{ substr($post->detail, 0, 60) }} . . . .</p>
 
                                                                             <div>
                                                                                 <a href="index/post/{{ $post->id }}" class="text-primary">Read more <i class="mdi mdi-arrow-right"></i></a>
@@ -389,7 +389,7 @@
                                                                 </div>
                                                             @endforeach
 
-            </div>
+                    </div>
 
 
 
@@ -636,7 +636,7 @@
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
 </div>
-</body>
+
 @endsection
 
 

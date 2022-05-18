@@ -38,8 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/setting-form-post',[SettingController::class,'store']);
 });
 
-Route::get('index',[HomeController::class,'show']);
+Route::get('index',[HomeController::class,'show'])->name('home');
 Route::get('index/post/{id}',[HomeController::class,'postdetail'])->name('postdetail');
-
+Route::get('index/blog-list',[HomeController::class,'showblogdetail'])->name('blogdetail');
 
 Route::post('index/comment',[CommentController::class,'add_comment'])->name('post-comment');
