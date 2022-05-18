@@ -1,33 +1,8 @@
-<!doctype html>
-<html lang="en">
-
-
-<!-- Mirrored from themesbrand.com/skote/layouts/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Apr 2022 06:07:06 GMT -->
-<head>
-
-        <meta charset="utf-8" />
-        <title>Blog Details | Skote - Admin & Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-        <!-- Bootstrap Css -->
-        <link href="{{ asset('frontend') }}/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="{{ asset('frontend') }}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="{{ asset('frontend') }}/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
-    </head>
-
-    <body data-sidebar="dark">
-
-    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
-
-        <!-- Begin page -->
-        <div id="layout-wrapper">
+<!-- Begin page -->
+        @extends('frontend.common.layout')
+        @section('content')
+        <div>
+         <div id="layout-wrapper">
 
 
             <header id="page-topbar">
@@ -300,7 +275,19 @@
 
                 <div class="page-content">
                     <div class="container-fluid">
+                        @if (session('status1'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('status1') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
 
+                        @if (session('status2'))
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ session('status2') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
@@ -358,7 +345,7 @@
                                                         <hr>
 
                                                         <div class="my-5">
-                                                            <img src="{{ asset('public') }}/post-image/{{ $post->fullimage }}" alt="" class="img-thumbnail mx-auto d-block">
+                                                            <img src="{{ asset('public') }}/post-image/{{ $post->fullimage }}" alt=""  class="img-thumbnail mx-auto d-block">
                                                         </div>
 
                                                         <hr>
@@ -492,25 +479,41 @@
                                                             <div class="mt-4">
                                                                 <h5 class="font-size-16 mb-3">Leave a Message</h5>
 
-                                                                <form>
+                                                                <form action="{{ route('post-comment') }}" method="POST">
+                                                                    @csrf
                                                                     <div class="row">
                                                                         <div class="col-md-6">
                                                                             <div class="mb-3">
                                                                                 <label for="commentname-input" class="form-label">Name</label>
-                                                                                <input type="text" class="form-control" id="commentname-input" placeholder="Enter name">
+                                                                                <input type="text" class="form-control" name="username" id="commentname-input" placeholder="Enter name">
+                                                                                @error('username')
+                                                                                    <div class="text text-danger">{{ $message }}</div>
+                                                                                @enderror
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-6">
                                                                             <div class="mb-3">
                                                                                 <label for="commentemail-input" class="form-label">Email</label>
-                                                                                <input type="email" class="form-control" id="commentemail-input" placeholder="Enter email">
+                                                                                <input type="email" class="form-control" name="email"  id="commentemail-input" placeholder="Enter email">
+                                                                                @error('email')
+                                                                                    <div class="text text-danger">{{ $message }}</div>
+                                                                                @enderror
                                                                             </div>
+
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="mb-3">
+                                                                        {{-- <label for="commentemail-input" class="form-label">Email</label> --}}
+                                                                        <input type="hidden" class="form-control" name="post_id"  id="post_id" placeholder="" value="{{ $post->id }}">
+                                                                    </div>
+
+                                                                    <div class="mb-3">
                                                                         <label for="commentmessage-input" class="form-label">Message</label>
-                                                                        <textarea class="form-control" id="commentmessage-input" placeholder="Your message..." rows="3"></textarea>
+                                                                        <textarea class="form-control" id="commentmessage-input" name="message" placeholder="Your message..." rows="3"></textarea>
+                                                                        @error('message')
+                                                                                    <div class="text text-danger">{{ $message }}</div>
+                                                                        @enderror
                                                                     </div>
 
                                                                     <div class="text-end">
@@ -555,11 +558,11 @@
             </div>
             <!-- end main content-->
 
-        </div>
-        <!-- END layout-wrapper -->
+            </div>
+            <!-- END layout-wrapper -->
 
-        <!-- Right Sidebar -->
-        <div class="right-bar">
+            <!-- Right Sidebar -->
+            <div class="right-bar">
             <div data-simplebar class="h-100">
                 <div class="rightbar-title d-flex align-items-center px-3 py-4">
 
@@ -575,25 +578,13 @@
 
 
             </div> <!-- end slimscroll-menu-->
+            </div>
+            <!-- /Right-bar -->
+
+            <!-- Right bar overlay-->
+            <div class="rightbar-overlay"></div>
         </div>
-        <!-- /Right-bar -->
-
-        <!-- Right bar overlay-->
-        <div class="rightbar-overlay"></div>
-
-        <!-- JAVASCRIPT -->
-        <script src="{{ asset('frontend') }}/assets/libs/jquery/jquery.min.js"></script>
-        <script src="{{ asset('frontend') }}/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="{{ asset('frontend') }}/assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="{{ asset('frontend') }}/assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="{{ asset('frontend') }}/assets/libs/node-waves/waves.min.js"></script>
-
-        <script src="{{ asset('frontend') }}/assets/js/app.js"></script>
-
-    </body>
-
-<!-- Mirrored from themesbrand.com/skote/layouts/blog-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Apr 2022 06:07:06 GMT -->
-</html>
+        @endsection
 
 
 
