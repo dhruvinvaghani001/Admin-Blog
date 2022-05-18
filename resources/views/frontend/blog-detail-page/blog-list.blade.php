@@ -361,11 +361,11 @@
                                                             <div>
                                                                 <h5><a href="index/post/{{ $post->id }}" class="text-dark">{{ $post->title }}</a></h5>
                                                                 <p class="text-muted">{{ date('d F Y',strtotime($post->created_at)) }}</p>
-
-                                                                <div class="position-relative mb-3">
-                                                                    <img src="{{ asset('frontend') }}/assets/images/small/img-2.jpg" alt="" class="img-thumbnail">
+                                                                <div>
+                                                                    <div class="position-relative mb-3">
+                                                                        <div><img src="{{ asset('public/post-image/') }}/{{ $post->fullimage }}" alt="" class="img-thumbnail" style="height:100% ; width:100%"></div>
+                                                                    </div>
                                                                 </div>
-
                                                                 <ul class="list-inline">
                                                                     <li class="list-inline-item me-3">
                                                                         <a href="javascript: void(0);" class="text-muted">
@@ -389,9 +389,9 @@
                                                         @endforeach
                                                             {{-- endcard --}}
 
+                                                            {{ $posts->links('frontend.paginate.page') }}
                                                             <hr class="my-5">
 
-                                                            {{ $posts->links() }}
 
 
                                                             {{-- <div>
@@ -430,7 +430,7 @@
 
                                                             {{-- <hr class="my-5"> --}}
 
-                                                            <div class="text-center">
+                                                            {{-- <div class="text-center">
                                                                 <ul class="pagination justify-content-center pagination-rounded">
                                                                     <li class="page-item disabled">
                                                                         <a href="javascript: void(0);" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
@@ -454,7 +454,7 @@
                                                                         <a href="javascript: void(0);" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
                                                                     </li>
                                                                 </ul>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>

@@ -338,11 +338,11 @@
                                                             </div>
                                                         </div>
                                                         <hr>
-
-                                                        <div class="my-5">
-                                                            <img src="{{ asset('public') }}/post-image/{{ $post->fullimage }}" alt=""  class="img-thumbnail mx-auto d-block">
+                                                        <div>
+                                                            <div class="my-5">
+                                                                <div><img src="{{ asset('public') }}/post-image/{{ $post->fullimage }}" alt="" style="width: 100%" class="img-thumbnail mx-auto d-block"></div>
+                                                            </div>
                                                         </div>
-
                                                         <hr>
 
                                                         <div class="mt-4">
