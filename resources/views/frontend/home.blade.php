@@ -391,7 +391,7 @@
                                                                             <ul class="list-inline">
                                                                                 <li class="list-inline-item me-3">
                                                                                     <a href="javascript: void(0);" class="text-muted">
-                                                                                        <i class="bx bx-purchase-tag-alt align-middle text-muted me-1"></i>{{ $cat->find($post->cat_id)->title }}
+                                                                                        <i class="bx bx-purchase-tag-alt align-middle text-muted me-1"></i>{{ $cat->find($post->category_id)->title }}
                                                                                     </a>
                                                                                 </li>
                                                                                 <li class="list-inline-item me-3">

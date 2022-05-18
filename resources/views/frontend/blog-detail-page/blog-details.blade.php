@@ -325,11 +325,11 @@
                                                         <div class="text-center">
                                                             <div class="mb-4">
                                                                 <a href="javascript: void(0);" class="badge bg-light font-size-12">
-                                                                    <i class="bx bx-purchase-tag-alt align-middle text-muted me-1"></i> {{ $cat->find($post->cat_id)->title }}
+                                                                    <i class="bx bx-purchase-tag-alt align-middle text-muted me-1"></i> {{ $cat->find($post->category_id)->title }}
                                                                 </a>
                                                             </div>
                                                             <h4>{{ $post->title }}</h4>
-                                                            <p class="text-muted mb-4"><i class="mdi mdi-calendar me-1"></i> 10 Apr, 2020</p>
+                                                            <p class="text-muted mb-4"><i class="mdi mdi-calendar me-1"></i>{{ date('d F Y',strtotime($post->created_at)) }}</p>
                                                         </div>
 
                                                         <hr>
@@ -338,7 +338,7 @@
                                                                 <div class="col-sm-4">
                                                                     <div>
                                                                         <p class="text-muted mb-2">Categories</p>
-                                                                        <h5 class="font-size-15">{{ $cat->find($post->cat_id)->title }}</h5>
+                                                                        <h5 class="font-size-15">{{ $cat->find($post->category_id)->title }}</h5>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-4">

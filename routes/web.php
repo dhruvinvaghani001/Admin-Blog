@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SampleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,4 @@ Route::middleware('auth')->group(function () {
 
 Route::get('index',[HomeController::class,'show']);
 Route::get('index/post/{id}',[HomeController::class,'postdetail']);
+
