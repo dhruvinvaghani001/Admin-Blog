@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Setting;
+use App\Models\Comment;
 
 class HomeController extends Controller
 {
@@ -18,9 +19,10 @@ class HomeController extends Controller
     }
     public function postdetail(Request $request , $id){
         $post = Post::find($id);
+        $comment = Comment::where('post_id',$id)->get();
         $cat = Category::all();
 
-        return view('frontend.blog-detail-page.blog-details',compact(['post','cat']));
+        return view('frontend.blog-detail-page.blog-details',compact(['post','cat','comment']));
     }
     public function showblogdetail(Request $request){
         $posts = Post::paginate(2);

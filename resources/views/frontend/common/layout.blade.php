@@ -35,7 +35,7 @@
             <script src="{{ asset('frontend') }}/assets/libs/simplebar/simplebar.min.js"></script>
             <script src="{{ asset('frontend') }}/assets/libs/node-waves/waves.min.js"></script>
             <script src="{{ asset('frontend') }}/assets/js/app.js"></script>
-
+            <script src="{{ asset('backend/asset/js/alert.js') }}"></script>
 
 
         {{-- </body> --}}

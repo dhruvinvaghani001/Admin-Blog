@@ -15,7 +15,7 @@ class DashboardController extends Controller
         $count_category = Category::count();
         $count_post = Post::count();
         $count_comment = Comment::count();
-        $count_user = Bloguser::count();
+        $count_user = Bloguser::count();    
 
         return view('backend.dashboard',compact(['count_category','count_post','count_comment','count_user']));
     }

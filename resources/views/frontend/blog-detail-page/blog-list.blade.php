@@ -381,18 +381,23 @@
                                                                 <p>{{ substr($post->detail,0,60) }} . . . .</p>
 
                                                                 <div>
-                                                                    <a href="index/post/{{ $post->id }}" class="text-primary">Read more <i class="mdi mdi-arrow-right"></i></a>
+                                                                    <a href="post/{{ $post->id }}" class="text-primary">Read more <i class="mdi mdi-arrow-right"></i></a>
                                                                 </div>
 
                                                             </div>
-                                                            <hr class="my-5">
+                                                            <hr class="my-4">
                                                         @endforeach
                                                             {{-- endcard --}}
 
-                                                            {{ $posts->links('frontend.paginate.page') }}
-                                                            <hr class="my-5">
 
+                                                            <div class="text-center">
+                                                                <ul class="pagination justify-content-center pagination-rounded">
 
+                                                                    {{ $posts->links("pagination::bootstrap-4") }}
+                                                                </ul>
+                                                            </div>
+
+                                                            <hr class="my-4">
 
                                                             {{-- <div>
                                                                 <h5><a href="blog-details.html" class="text-dark">Project discussion with team</a></h5>

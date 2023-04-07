@@ -389,6 +389,7 @@
                                                                 <h5 class="font-size-15"><i class="bx bx-message-dots text-muted align-middle me-1"></i> Comments :</h5>
 
                                                                 <div>
+                                                                    @foreach ($comment as $comment)
                                                                     <div class="d-flex py-3">
                                                                         <div class="flex-shrink-0 me-3">
                                                                             <div class="avatar-xs">
@@ -398,64 +399,17 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="flex-grow-1">
-                                                                            <h5 class="font-size-14 mb-1">Delores Williams <small class="text-muted float-end">1 hr Ago</small></h5>
-                                                                            <p class="text-muted">If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual</p>
+                                                                            <h5 class="font-size-14 mb-1">{{ $comment->name }} <small class="text-muted float-end">1 hr Ago</small></h5>
+                                                                            <p class="text-muted">{{ $comment->comment }}</p>
                                                                             <div>
                                                                                 <a href="javascript: void(0);" class="text-success"><i class="mdi mdi-reply"></i> Reply</a>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="d-flex py-3 border-top">
-                                                                        <div class="flex-shrink-0 me-3">
-                                                                            <div class="avatar-xs">
-                                                                                <img src="{{ asset('frontend') }}/assets/images/users/avatar-2.jpg" alt="" class="img-fluid d-block rounded-circle">
-                                                                            </div>
-                                                                        </div>
+                                                                    @endforeach
 
-                                                                        <div class="flex-grow-1">
-                                                                            <h5 class="font-size-14 mb-1">Clarence Smith <small class="text-muted float-end">2 hrs Ago</small></h5>
-                                                                            <p class="text-muted">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
-                                                                            <div>
-                                                                                <a href="javascript: void(0);" class="text-success"><i class="mdi mdi-reply"></i> Reply</a>
-                                                                            </div>
 
-                                                                            <div class="d-flex pt-3">
-                                                                                <div class="flex-shrink-0 me-3">
-                                                                                    <div class="avatar-xs">
-                                                                                        <div class="avatar-title rounded-circle bg-light text-primary">
-                                                                                            <i class="bx bxs-user"></i>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="flex-grow-1">
-                                                                                    <h5 class="font-size-14 mb-1">Silvia Martinez <small class="text-muted float-end">2 hrs Ago</small></h5>
-                                                                                    <p class="text-muted">To take a trivial example, which of us ever undertakes laborious physical exercise</p>
-                                                                                    <div>
-                                                                                        <a href="javascript: void(0);" class="text-success"><i class="mdi mdi-reply"></i> Reply</a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="d-flex py-3 border-top">
-                                                                        <div class="flex-shrink-0 me-3">
-                                                                            <div class="avatar-xs">
-                                                                                <div class="avatar-title rounded-circle bg-light text-primary">
-                                                                                    <i class="bx bxs-user"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <div class="flex-grow-1">
-                                                                            <h5 class="font-size-14 mb-1">Keith McCoy <small class="text-muted float-end">12 Aug</small></h5>
-                                                                            <p class="text-muted">Donec posuere vulputate arcu. phasellus accumsan cursus velit</p>
-                                                                            <div>
-                                                                                <a href="javascript: void(0);" class="text-success"><i class="mdi mdi-reply"></i> Reply</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+                                                                   
 
                                                                 </div>
                                                             </div>
